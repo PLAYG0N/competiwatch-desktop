@@ -5,6 +5,7 @@ import CsvExporter from "../../models/CsvExporter";
 import Match from "../../models/Match";
 import FileUtil from "../../models/FileUtil";
 import MatchRankImage from "../MatchRankImage";
+import {rankSubTierFor} from "../MatchRankImage";
 import HeroImage from "../HeroImage";
 import "./AccountListItem.css";
 import Account from "../../models/Account";
@@ -229,7 +230,7 @@ const AccountListItem = ({
                 />
               )}
               <h3 className="h4 text-normal lh-condensed text-gray-dark my-0">
-                {latestMatch.rank}
+                {typeof latestMatch.rank === "number" ? rankSubTierFor(latestMatch.rank):<span>&mdash;</span>}
               </h3>
             </RankButton>
           )}

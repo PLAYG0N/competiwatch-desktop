@@ -1,6 +1,7 @@
 import React, { forwardRef, MutableRefObject } from "react";
 import Season from "../../models/Season";
 import MatchRankImage from "../MatchRankImage";
+import {rankSubTierFor} from "../MatchRankImage";
 import HeroImage from "../HeroImage";
 import RoleImage from "../RoleImage";
 import TimeOfDayEmoji from "../TimeOfDayEmoji";
@@ -320,7 +321,7 @@ const MatchTableRow = (
               className="d-inline-block mr-1 hide-sm"
             />
           )}
-          {typeof rank === "number" ? rank : <span>&mdash;</span>}
+          {typeof rank === "number" ? rankSubTierFor(rank) : <span>&mdash;</span>}
         </div>
       </RankCell>
       <StreakCell

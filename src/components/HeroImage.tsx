@@ -59,8 +59,8 @@ const HeroImage = ({ hero, className, size }: Props) => {
       src={src}
       alt={hero}
       className={className}
-      width={size || 20}
-      height={size || 20}
+      width={size || 24}
+      height={size || 24}
     />
   );
 };
